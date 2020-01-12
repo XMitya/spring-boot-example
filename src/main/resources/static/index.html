@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script type = "text/javascript" src = "js/lib/vue.js"></script>
+    <script type = "text/javascript" src="js/lib/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <div id="app" class="col-md-8 offset-md-2">
+        <h1>Welcome to courses!</h1>
+        <button type="button" class="btn btn-success" v-on:click="loadCourses">Load courses</button>
+        <table class="table table-striped table-bordered table-hover">
+            <tr>
+                <th>Title</th>
+                <th>Duration</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+            <tr v-for="(course, index) in courses">
+                <td>{{ course.title }}</td>
+                <td>{{ course.duration }}</td>
+                <td>{{ course.price }}</td>
+                <td><button class="btn btn-danger" v-on:click="deleteCourse(index)">Delete</button></td>
+            </tr>
+        </table>
+        <div class="form-group row">
+            <div class="col-xs-2">
+                <input class="form-control" v-model="newCourse.title" type="text" id="title-in" placeholder="Title:">
+            </div>
+            <div class="col-xs-2">
+                <input class="form-control" v-model="newCourse.duration" id="duration-in" placeholder="Duration:">
+            </div>
+            <div class="col-xs-2">
+                <input class="form-control" v-model="newCourse.price" id="price-in" placeholder="Price:">
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-primary go inline" v-on:click="addCourse">Add course</button>
+                </span>
+            <div>
+        </div>
+    </div>
+    <script type = "text/javascript" src = "js/courses.js"></script>
+</body>
+</html>
