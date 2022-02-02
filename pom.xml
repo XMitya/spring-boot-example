@@ -15,7 +15,7 @@
     <description>Test Spring project</description>
 
     <properties>
-        <postgres.version>42.2.8</postgres.version>
+        <postgres.version>42.2.25</postgres.version>
         <java.version>13</java.version>
     </properties>
 
